@@ -68,4 +68,6 @@ client.on('ready', () => {
 })
 
 
-client.login('ODQxOTgwNjgyNjQ1MTQzNTgy.YJupnQ.WwFNSIcTpGuJePXn_7d6kt_2Qs0');
+
+const secretToken = getenv("BOT_SECRET_TOKEN");
+client.login(secretToken);
