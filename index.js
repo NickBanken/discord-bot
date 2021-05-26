@@ -69,5 +69,5 @@ client.on('ready', () => {
 
 
 
-const secretToken = getenv("BOT_SECRET_TOKEN");
+const secretToken = process.env.BOT_SECRET_TOKEN;
 client.login(secretToken);
