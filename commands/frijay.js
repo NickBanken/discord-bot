@@ -9,7 +9,7 @@ module.exports = {
             .setDescription("The frijay Activities are little games that we play at Becode, at the end of the week. ")
             .addFields(
                 { name:"When?", value:"Fridays around 16h00"},
-                { name:"Where?", value:"On Becode's Global Server (Frijay fun times Category). If you're not on that server, ask your coaches.", value:"test"}
+                { name:"Where?", value:"On Becode's Global Server (Frijay fun times Category). If you're not on that server, ask your coaches.", value:""}
             )
         message.channel.send(frijayMessage);
     }

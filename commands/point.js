@@ -9,7 +9,7 @@ module.exports = {
             .setDescription("You have to point on [MyBecode](https://my.becode.org/)")
             .addFields(
                 { name:"*When?*", value:"- Before 9:00 \n - After 12:30 \n - Before 13:30 \n - After 17:00"},
-                { name:"If you have any problems, contact your coaches 😉"}
+                { name:"If you have any problems, contact your coaches 😉", value:""}
             )
         message.channel.send(pointMessage);
     }
