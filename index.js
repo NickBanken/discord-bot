@@ -26,7 +26,7 @@ client.on('message', message => {
     const helloArray = ["hello", "hi", "good morning"];
     for (let i = 0; i < helloArray.length; i++) {
         if (message.mentions.has(client.user) && (message.content.includes(helloArray[i]))) {
-            client.commands.get('hello').execute(message, args);
+            client.commands.get('hello').execute(message);
         }
     }
     
