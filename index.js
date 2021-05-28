@@ -29,6 +29,10 @@ client.on('message', message => {
             client.commands.get('hello').execute(message);
         }
     }
+
+    if (message.mentions.has(client.user)) {
+        client.commands.get('answers').execute(message);
+    }
     
     const Reaction = () => {message.react("👀");}
 
