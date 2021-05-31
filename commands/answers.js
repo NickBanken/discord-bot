@@ -8,13 +8,13 @@ module.exports = {
         const sadArray = ["problem"];
 
         for (let i = 0; i < helloArray.length; i++) {
-            if (lowerCaseMessage.content.includes(helloArray[i])) {
+            if (lowerCaseMessage.includes(helloArray[i])) {
                 message.channel.send(`Hello ${message.author}, how are you today?`);
             }
         }
 
         for (let i = 0; i < sadArray.length; i++) {
-            if (lowerCaseMessage.content.includes(sadArray[i])) {
+            if (lowerCaseMessage.includes(sadArray[i])) {
                 message.channel.send(`It's gonna be okayyy ${message.author}`);
             }
         }
