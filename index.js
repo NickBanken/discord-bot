@@ -23,12 +23,12 @@ client.once('ready', () => {
 
 client.on('message', message => {
 
-    const helloArray = ["hello", "hi", "good morning"];
-    for (let i = 0; i < helloArray.length; i++) {
-        if (message.mentions.has(client.user) && (message.content.includes(helloArray[i]))) {
-            client.commands.get('hello').execute(message);
-        }
-    }
+    // const helloArray = ["hello", "hi", "good morning"];
+    // for (let i = 0; i < helloArray.length; i++) {
+    //     if (message.mentions.has(client.user) && (message.content.includes(helloArray[i]))) {
+    //         client.commands.get('hello').execute(message);
+    //     }
+    // }
 
     if (message.mentions.has(client.user)) {
         client.commands.get('answers').execute(message);
