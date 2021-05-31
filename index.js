@@ -4,7 +4,7 @@ const client = new Discord.Client();
 
 const prefix ='*';
 
-const fs = require('fs'); //to enter ino other Js files
+const fs = require('fs'); //to enter into other Js files
 
 client.commands = new Discord.Collection(); //storing all of our commands
 
