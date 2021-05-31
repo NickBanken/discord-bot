@@ -2,7 +2,7 @@ module.exports = {
     name: 'answers',
     description: 'looks for some words and answers accordingly',
     execute(message) {
-        lowerCaseMessage = message.shift().toLowerCase(); 
+        lowerCaseMessage = message.toLowerCase(); 
 
         const helloArray = ["hello", "hi", "good morning"];
         const sadArray = ["problem"];
