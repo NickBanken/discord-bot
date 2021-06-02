@@ -5,8 +5,8 @@ module.exports = {
         try {
             lowerCaseMessage = message.content.toLowerCase(); 
 
-            const helloArray = ["hello", "hi", "good morning"];
-            const sadArray = ["problem"];
+            const helloArray = ["hello", "hi", "good morning", "nice afternoon", "good afternoon", "good evening", "nice evening", "greeting", "greetings", "happy day"];
+            const sadArray = ["problem", "sad", "wrong", "bad", "not working"];
 
             for (let i = 0; i < helloArray.length; i++) {
                 if (lowerCaseMessage.includes(helloArray[i])) {
@@ -16,7 +16,7 @@ module.exports = {
 
             for (let i = 0; i < sadArray.length; i++) {
                 if (lowerCaseMessage.includes(sadArray[i])) {
-                    message.channel.send(`It's gonna be okayyy ${message.author}`);
+                    message.channel.send(`It's gonna be okayyy ${message.author}!! \n Did you ask your colleagues for help? Did you type your problem in different ways in your browser? \n Yes? Okay, then just go to your coaches, they'll help you.`);
                 }
             }
         } catch (err) {
