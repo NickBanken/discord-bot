@@ -12,7 +12,8 @@
   "dependencies": {
     "cron": "^1.8.2",
     "discord.js": "^12.5.3",
-    "heroku": "^7.54.0"
+    "heroku": "^7.54.0",
+    "printf": "^0.6.1"
   },
   "devDependencies": {},
   "repository": {
