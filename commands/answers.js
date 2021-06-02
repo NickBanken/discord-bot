@@ -11,6 +11,7 @@ module.exports = {
             for (let i = 0; i < helloArray.length; i++) {
                 if (lowerCaseMessage.includes(helloArray[i])) {
                     message.channel.send(`Hello ${message.author}, how are you today?`);
+                    break;
                 }
             }
 

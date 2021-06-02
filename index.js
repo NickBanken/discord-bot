@@ -65,7 +65,9 @@ client.on('ready', () => {
     client.user.setActivity('*help', {type: "WATCHING"}).catch(console.error);
 })
 
-
+client.on('guildCreate', guild => {
+    guild.systemChannel.send(`Hello`)
+  });
 
 const secretToken = process.env.BOT_SECRET_TOKEN;
 client.login(secretToken);
