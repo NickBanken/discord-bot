@@ -66,7 +66,8 @@ client.on('ready', () => {
 })
 
 client.on('guildCreate', guild => {
-    guild.systemChannel.send(`Hello`)
+    client.commands.get('on_join').execute(guild);
+    guild.systemChannel.send(`Hello`);
   });
 
 const secretToken = process.env.BOT_SECRET_TOKEN;
