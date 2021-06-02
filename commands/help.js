@@ -14,7 +14,8 @@ module.exports = {
                 { name: "*english", value: "Presents the English Activities"},
                 { name: "*frijay", value: "Presents the Frijay"},
                 { name: "Reminder", value: "For breaks, meal time, and end of the day" },
-                { name: "Greatings", value: "Try to tag me and say hello" }
+                { name: "Greetings", value: "Try to tag me and say hello" },
+                { name: "Help", value:"Just tag me and tell me if you have a problem"}
             );
 
             message.channel.send(helpMessage);
