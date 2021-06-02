@@ -13,12 +13,12 @@ module.exports = {
             const mealMessage = new Discord.MessageEmbed()
                 .setColor('#6C63FF')
                 .setTitle("Meal Time! :pizza:")
-                .setDescription("Nice Meal! \n Don't forget to clock on [MyBecode](https://my.becode.org/)");
+                .setDescription("Nice Meal! \nDon't forget to clock on [MyBecode](https://my.becode.org/)");
 
             const endOfDayMessage = new Discord.MessageEmbed()
                 .setColor('#6C63FF')
                 .setTitle("End of the day! :partying_face:")
-                .setDescription("Don't forget to clock on [MyBecode](https://my.becode.org/). \n Nice evening guys!");
+                .setDescription("Don't forget to clock on [MyBecode](https://my.becode.org/). \nNice evening guys!");
 
             const sendBreakMessage = new cron.CronJob('00 11,15 * * 1-5', () => { 
                 // From mon-fri, 11.00 & 15.00

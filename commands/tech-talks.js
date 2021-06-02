@@ -18,7 +18,7 @@ module.exports = {
             )
             .setImage("https://media1.tenor.com/images/b94c3db38d669a1c08982ce8f5dfa531/tenor.gif?itemid=12374537");
 
-            message.channel.send(`${message.author} This could help you :\n`, techTalksInfoMessage);
+            message.channel.reply(techTalksInfoMessage);
         } catch (err) {
             message.channel.send(`I'm sorry, there was an error trying to answer that command: ${err}`); 
         }
