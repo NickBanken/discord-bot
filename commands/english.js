@@ -3,7 +3,6 @@ module.exports = {
     name: 'english',
     description: 'presents the english activities at BeCode',
     execute(message, args) {
-
         try {
             const frijayMessage = new Discord.MessageEmbed()
             .setColor('#FFDE8E')

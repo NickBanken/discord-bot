@@ -3,7 +3,8 @@ module.exports = {
     name: 'help',
     description: 'defines all existing commands for this bot',
     execute(message, args) {
-        const helpMessage = new Discord.MessageEmbed()
+        try {
+            const helpMessage = new Discord.MessageEmbed()
             .setColor('#E89F28')
             .setTitle("HELP")
             .addFields(
@@ -16,6 +17,9 @@ module.exports = {
                 { name: "Greatings", value: "Try to tag me and say hello" }
             );
 
-        message.channel.send(helpMessage);
+            message.channel.send(helpMessage);
+        } catch (err) {
+            message.channel.send(`I'm sorry, there was an error trying to answer that command: ${err}`); 
+        }
     }
 }

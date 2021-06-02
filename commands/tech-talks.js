@@ -3,7 +3,8 @@ module.exports = {
     name: 'tech-talks',
     description: 'answering general questions about the tech-talks',
     execute(message, args) {
-        const techTalksInfoMessage = new Discord.MessageEmbed()
+        try {
+            const techTalksInfoMessage = new Discord.MessageEmbed()
             .setColor('#19CB61')
             .setTitle("Tech Talks Questions & Answers")
             .addFields(
@@ -17,6 +18,9 @@ module.exports = {
             )
             .setImage("https://media1.tenor.com/images/b94c3db38d669a1c08982ce8f5dfa531/tenor.gif?itemid=12374537");
 
-        message.channel.send(`${message.author} This could help you :\n`, techTalksInfoMessage);
+            message.channel.send(`${message.author} This could help you :\n`, techTalksInfoMessage);
+        } catch (err) {
+            message.channel.send(`I'm sorry, there was an error trying to answer that command: ${err}`); 
+        }
     }
 }
