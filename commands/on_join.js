@@ -5,8 +5,9 @@ module.exports = {
     execute(guild) {
         try {
             const onJoinMessage = new Discord.MessageEmbed()
-            .setColor('#FFDE8E')
+            .setColor('#16232E')
             .setTitle("Hello! Let me present myself")
+            .setThumbnail("./images/discord-avatar.png")
             .addFields(
                 { name:"I'm Remi, I'm a bot. Obviously. It's written.", value:"I'm created by @TanyaL, coach at Becode Liège and I only speak English."},
                 { name:"What I do", value:"I remind you for the breaks and help the juniors in their Becode training. \nMy prefix is the \`*\`, and all my commands are listed in the \`*help\` command."},
