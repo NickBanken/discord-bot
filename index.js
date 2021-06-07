@@ -59,8 +59,8 @@ client.on('message', message => {
 
 client.on('ready', () => {
     const GeneralChan = client.channels.cache.get('789074174458724352');
-    const SecondChan = client.channels.cache.get('836512987804205087');
-    client.commands.get('reminder').execute(GeneralChan, SecondChan);
+    // const SecondChan = client.channels.cache.get('836512987804205087');
+    client.commands.get('reminder').execute(GeneralChan);
 
     client.user.setActivity('*help', {type: "WATCHING"}).catch(console.error);
 })
