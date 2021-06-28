@@ -5,6 +5,8 @@ module.exports = {
     description: 'reminding for the break and meal times',
     execute(GeneralChan, SecondChan) {
         try {
+            const Hamilton5RoleId = "854986232151801876";
+
             const breakMessage = new Discord.MessageEmbed()
             .setColor('#6C63FF')
             .setTitle("Break Time! :doughnut:")
@@ -23,17 +25,17 @@ module.exports = {
             const sendBreakMessage = new cron.CronJob('00 11,15 * * 1-5', () => { 
                 // From mon-fri, 11.00 & 15.00
                 GeneralChan.send(breakMessage);
-                SecondChan.send(breakMessage);
+                SecondChan.send(`<@&${Hamilton5RoleId}>`, breakMessage);
             });
             const sendMealMessage = new cron.CronJob('00 30 12 * * 1-5', () => {
                 // From mon-fri, 12.30
                 GeneralChan.send(mealMessage);
-                SecondChan.send(mealMessage);
+                SecondChan.send(`<@&${Hamilton5RoleId}>`, mealMessage);
             });
             const sendEndOfDayMessage = new cron.CronJob('00 00 17 * * 1-5', () => {
                 // From mon-fri, 17.00
                 GeneralChan.send(endOfDayMessage);
-                SecondChan.send(endOfDayMessage);
+                SecondChan.send(`<@&${Hamilton5RoleId}>`, endOfDayMessage);
             });
 
             sendBreakMessage.start();
