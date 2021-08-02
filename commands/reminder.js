@@ -3,7 +3,7 @@ const cron = require('cron');
 module.exports = {
     name: 'reminder',
     description: 'reminding for the break and meal times',
-    execute(GeneralChan, SecondChan) {
+    execute(GeneralChan) {
         try {
             const Hamilton5RoleId = "854986232151801876";
 
@@ -24,18 +24,18 @@ module.exports = {
 
             const sendBreakMessage = new cron.CronJob('00 11,15 * * 1-5', () => { 
                 // From mon-fri, 11.00 & 15.00
-                GeneralChan.send(breakMessage);
-                SecondChan.send(`<@&${Hamilton5RoleId}>`, breakMessage);
+                GeneralChan.send(`<@&${Hamilton5RoleId}>`, breakMessage);
+                // SecondChan.send(breakMessage);
             });
             const sendMealMessage = new cron.CronJob('00 30 12 * * 1-5', () => {
                 // From mon-fri, 12.30
-                GeneralChan.send(mealMessage);
-                SecondChan.send(`<@&${Hamilton5RoleId}>`, mealMessage);
+                GeneralChan.send(`<@&${Hamilton5RoleId}>`, mealMessage);
+                // SecondChan.send(mealMessage);
             });
             const sendEndOfDayMessage = new cron.CronJob('00 00 17 * * 1-5', () => {
                 // From mon-fri, 17.00
-                GeneralChan.send(endOfDayMessage);
-                SecondChan.send(`<@&${Hamilton5RoleId}>`, endOfDayMessage);
+                GeneralChan.send(`<@&${Hamilton5RoleId}>`, endOfDayMessage);
+                // SecondChan.send(endOfDayMessage);
             });
 
             sendBreakMessage.start();
