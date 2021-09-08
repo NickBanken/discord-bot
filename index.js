@@ -43,6 +43,9 @@ client.on("message", (message) => {
 	} else if (command === "help") {
 		Reaction();
 		client.commands.get("help").execute(message, args);
+	} else if (command === "presentation") {
+		Reaction();
+		client.commands.get("presentation").execute(message, args);
 	} else if (command === "tech-talks") {
 		Reaction();
 		client.commands.get("tech-talks").execute(message, args);

@@ -1,12 +1,12 @@
 const Discord = require("discord.js");
 module.exports = {
-	name: "on_join",
-	description: "frist message when the bot is invited on a new server",
-	execute(guild) {
+	name: "presentation",
+	description: "little presentation, nice to meet you, message",
+	execute(message, args) {
 		try {
-			const onJoinMessage = new Discord.MessageEmbed()
+			const helpMessage = new Discord.MessageEmbed()
 				.setColor("#16232E")
-				.setTitle("Hello! Let me present myself")
+				.setTitle("PRESENTATION")
 				.addFields(
 					{
 						name: "I'm Remi, I'm a bot. Obviously. It's written.",
@@ -21,10 +21,11 @@ module.exports = {
 						value: "If you have a problem with my commands, just write it [here](https://github.com/Tanya-Amber-L/discord-bot/issues).",
 					}
 				);
-			guild.systemChannel.send(onJoinMessage);
+
+			message.channel.send(helpMessage);
 		} catch (err) {
-			guild.systemChannel.send(
-				`I'm sorry, I'm a bit stressed meeting you all and threw this error by mistake: ${err}`
+			message.channel.send(
+				`I'm sorry, there was an error trying to answer that command: ${err}`
 			);
 		}
 	},
