@@ -11,20 +11,42 @@ module.exports = {
 			const breakMessage = new Discord.MessageEmbed()
 				.setColor("#6C63FF")
 				.setTitle("Break Time! :doughnut:")
-				.setDescription("15 minutes break, just go take a coffee.");
+				.setDescription("15 minutes break, just go rest a bit ;)");
 
-			const mealMessage = new Discord.MessageEmbed()
+			const mealMessageHam = new Discord.MessageEmbed()
 				.setColor("#6C63FF")
 				.setTitle("Meal Time! :pizza:")
 				.setDescription(
 					"Nice Meal! \nDon't forget to clock on [MyBecode](https://my.becode.org/)"
 				);
 
-			const endOfDayMessage = new Discord.MessageEmbed()
+			const endOfDayMessageHam = new Discord.MessageEmbed()
 				.setColor("#6C63FF")
 				.setTitle("End of the day! :partying_face:")
 				.setDescription(
 					"Don't forget to clock on [MyBecode](https://my.becode.org/). \nNice evening guys!"
+				);
+
+			const mealMessageJep = new Discord.MessageEmbed()
+				.setColor("#6C63FF")
+				.setTitle("MEAL TIME! :pizza: CLOCK HERE!")
+				.setDescription(
+					"Nice Meal! \nDon't forget to clock on [MyBecode](https://my.becode.org/)"
+				)
+				.setURL("https://my.becode.org/")
+				.setImage(
+					"https://c.tenor.com/pDRfpNAXfmcAAAAC/despicable-me-minions.gif"
+				);
+
+			const endOfDayMessageJep = new Discord.MessageEmbed()
+				.setColor("#6C63FF")
+				.setTitle("END OF THE DAY! :partying_face: CLOCK HERE")
+				.setDescription(
+					"Don't forget to clock on [MyBecode](https://my.becode.org/). \nNice evening guys!"
+				)
+				.setURL("https://my.becode.org/")
+				.setImage(
+					"https://c.tenor.com/pDRfpNAXfmcAAAAC/despicable-me-minions.gif"
 				);
 
 			const sendBreakMessage = new cron.CronJob(
@@ -37,15 +59,18 @@ module.exports = {
 			);
 			const sendMealMessage = new cron.CronJob("00 30 12 * * 1-5", () => {
 				// From mon-fri, 12.30
-				GeneralChan.send(`<@&${Hamilton5RoleId}>`, mealMessage);
-				SecondChan.send(`<@&${Jepsen5RoleId}>`, mealMessage);
+				GeneralChan.send(`<@&${Hamilton5RoleId}>`, mealMessageHam);
+				SecondChan.send(`<@&${Jepsen5RoleId}>`, mealMessageJep);
 			});
 			const sendEndOfDayMessage = new cron.CronJob(
 				"00 00 17 * * 1-5",
 				() => {
 					// From mon-fri, 17.00
-					GeneralChan.send(`<@&${Hamilton5RoleId}>`, endOfDayMessage);
-					SecondChan.send(`<@&${Jepsen5RoleId}>`, endOfDayMessage);
+					GeneralChan.send(
+						`<@&${Hamilton5RoleId}>`,
+						endOfDayMessageHam
+					);
+					SecondChan.send(`<@&${Jepsen5RoleId}>`, endOfDayMessageJep);
 				}
 			);
 
