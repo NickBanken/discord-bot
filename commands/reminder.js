@@ -51,21 +51,18 @@ module.exports = {
 
       const sendBreakMessage = new cron.CronJob("00 11,15 * * 1-5", () => {
         // From mon-fri, 11.00 & 15.00
-        // GeneralChan.send(`<@&${Hamilton5RoleId}>`, breakMessage);
-        SecondChan.send(`<@&${Jepsen5RoleId}>`, breakMessage);
+        GeneralChan.send(`<@&${Hamilton5RoleId}>`, breakMessage);
+        // SecondChan.send(`<@&${Jepsen5RoleId}>`, breakMessage);
       });
       const sendMealMessage = new cron.CronJob("00 30 12 * * 1-5", () => {
         // From mon-fri, 12.30
-        // GeneralChan.send(`<@&${Hamilton5RoleId}>`, mealMessageHam);
-        SecondChan.send(`<@&${Jepsen5RoleId}>`, mealMessageJep);
+        GeneralChan.send(`<@&${Hamilton5RoleId}>`, mealMessageHam);
+        // SecondChan.send(`<@&${Jepsen5RoleId}>`, mealMessageJep);
       });
       const sendEndOfDayMessage = new cron.CronJob("00 00 17 * * 1-5", () => {
         // From mon-fri, 17.00
-        // GeneralChan.send(
-        // 	`<@&${Hamilton5RoleId}>`,
-        // 	endOfDayMessageHam
-        // );
-        SecondChan.send(`<@&${Jepsen5RoleId}>`, endOfDayMessageJep);
+        GeneralChan.send(`<@&${Hamilton5RoleId}>`, endOfDayMessageHam);
+        // SecondChan.send(`<@&${Jepsen5RoleId}>`, endOfDayMessageJep);
       });
 
       sendBreakMessage.start();
