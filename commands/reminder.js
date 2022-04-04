@@ -74,9 +74,9 @@ module.exports = {
 				}
 			);
 
-			sendBreakMessage.start();
-			sendMealMessage.start();
-			sendEndOfDayMessage.start();
+			// sendBreakMessage.start();
+			// sendMealMessage.start();
+			// sendEndOfDayMessage.start();
 		} catch (err) {
 			message.channel.send(
 				`I'm sorry, there was an error trying to answer that command: ${err}`
