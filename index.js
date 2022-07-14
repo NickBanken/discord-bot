@@ -64,7 +64,8 @@ client.on("message", (message) => {
 client.on("ready", () => {
 	const HamiltonChan = client.channels.cache.get("936210193191161876");
 	const JepsenChan = client.channels.cache.get("879651560462884896");
-	client.commands.get("reminder").execute(HamiltonChan, JepsenChan);
+	const DSChan = client.channels.cache.get("993813864162537482");
+	client.commands.get("reminder").execute(HamiltonChan, JepsenChan, DSChan);
 
 	client.user.setActivity("*help", { type: "WATCHING" }).catch(console.error);
 });
