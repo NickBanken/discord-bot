@@ -3,10 +3,9 @@ const cron = require("cron");
 module.exports = {
 	name: "reminder",
 	description: "reminding for the break and meal times",
-	execute(GeneralChan, SecondChan, DSChan) {
+	execute(GeneralChan, SecondChan) {
 		try {
 			const Hamilton6RoleId = "937658982351392798";
-			const DS2RoleId = "993813274640531506";
 			// const Jepsen5RoleId = "882645898776162345";
 
 			const breakMessage = new Discord.MessageEmbed()
@@ -55,14 +54,12 @@ module.exports = {
 				() => {
 					// From mon-fri, 11.00 & 15.00
 					GeneralChan.send(`<@&${Hamilton6RoleId}>`, breakMessage);
-					DSChan.send(`<@&${DS2RoleId}>`, breakMessage);
 					// SecondChan.send(`<@&${Jepsen5RoleId}>`, breakMessage);
 				}
 			);
 			const sendMealMessage = new cron.CronJob("00 30 12 * * 1-5", () => {
 				// From mon-fri, 12.30
 				GeneralChan.send(`<@&${Hamilton6RoleId}>`, mealMessageHam);
-				DSChan.send(`<@&${DS2RoleId}>`, mealMessageHam);
 				// SecondChan.send(`<@&${Jepsen5RoleId}>`, mealMessageJep);
 			});
 			const sendEndOfDayMessage = new cron.CronJob(
@@ -73,7 +70,6 @@ module.exports = {
 						`<@&${Hamilton6RoleId}>`,
 						endOfDayMessageHam
 					);
-					DSChan.send(`<@&${DS2RoleId}>`, endOfDayMessageHam);
 					// SecondChan.send(`<@&${Jepsen5RoleId}>`, endOfDayMessageJep);
 				}
 			);
